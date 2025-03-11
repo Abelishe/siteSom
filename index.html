@@ -7,9 +7,22 @@
 </head>
 <body>
     <h2>Obrigado por enviar o formulário!</h2>
-    <audio autoplay>
-        <source src="https://www.myinstants.com/media/sounds/confirma-urna.mp3">
+    <p>O som será reproduzido automaticamente. Caso não toque, clique no botão abaixo.</p>
+    
+    <audio id="audio" autoplay>
+        <source src="https://www.myinstants.com/media/sounds/confirma-urna.mp3" type="audio/mpeg">
         Seu navegador não suporta áudio HTML5.
     </audio>
+
+    <button onclick="document.getElementById('audio').play()">Tocar Som</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let audio = document.getElementById('audio');
+            audio.play().catch(error => {
+                console.log("Reprodução automática bloqueada, mostrando botão.");
+            });
+        });
+    </script>
 </body>
 </html>
