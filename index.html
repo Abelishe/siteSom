@@ -7,7 +7,7 @@
 </head>
 <body>
     <h2>Obrigado por enviar o formulário!</h2>
-    <p>O som será reproduzido automaticamente. Caso não toque, clique no botão abaixo.</p>
+    <p>Se o som não tocar automaticamente, clique no botão abaixo.</p>
     
     <audio id="audio" autoplay>
         <source src="https://www.myinstants.com/media/sounds/confirma-urna.mp3" type="audio/mpeg">
@@ -19,9 +19,25 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             let audio = document.getElementById('audio');
-            audio.play().catch(error => {
-                console.log("Reprodução automática bloqueada, mostrando botão.");
-            });
+
+            // Criar uma interação simulada para enganar o navegador
+            let playPromise = audio.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    console.log("Áudio tocando automaticamente!");
+                }).catch(error => {
+                    console.log("Reprodução automática bloqueada, tentando workaround...");
+                    
+                    // Workaround: Criar um evento artificial de interação do usuário
+                    let clickEvent = new MouseEvent("click", {
+                        bubbles: true,
+                        cancelable: true,
+                        view: window
+                    });
+                    document.body.dispatchEvent(clickEvent);
+                });
+            }
         });
     </script>
 </body>
