@@ -3,14 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecionando...</title>
+    <title>Formulário Enviado</title>
     <script>
-        setTimeout(function() {
-            window.location.href = "som.html";
-        }, 1000); // Aguarda 1 segundo antes de redirecionar
+        function tocarSomERedirecionar() {
+            let audio = document.getElementById("audio");
+
+            // Toca o som
+            let playPromise = audio.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    console.log("Som tocando...");
+
+                    // Aguarda 2 segundos antes de redirecionar
+                    setTimeout(() => {
+                        window.location.href = "https://forms.gle/pE6HfoqaDTagyg588";
+                    }, 2000);
+
+                }).catch(error => {
+                    console.log("Erro ao tocar som: ", error);
+                    window.location.href = "https://forms.gle/pE6HfoqaDTagyg588";
+                });
+            }
+        }
     </script>
 </head>
 <body>
-    <h2>Carregando...</h2>
+    <h2>Obrigado por enviar o formulário!</h2>
+    
+    <audio id="audio">
+        <source src="https://www.myinstants.com/media/sounds/confirma-urna.mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio HTML5.
+    </audio>
+
+    <p>Clique no botão abaixo para tocar o som e continuar:</p>
+    <button onclick="tocarSomERedirecionar()">Tocar Som e Continuar</button>
 </body>
 </html>
