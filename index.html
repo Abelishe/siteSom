@@ -3,25 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário 03 - Teste Redirecionamento</title>
+    <title>Sucesso - Voto Computado</title>
     <style>
         :root {
             --primary-color: #673AB7; /* Cor do topo */
             --background-color: #F3F3F3;
             --text-color: #333;
-            --link-color: #1A73E8;
-            --button-color: #4CAF50;
-            --button-hover-color: #45a049;
-            --button-text-color: white;
+            --button-color: #fff;
+            --button-hover-color: #fff;
+            --button-text-color: #dee0e3;
+            --image-width: 500px; /* Ajuste fácil do tamanho da imagem */
         }
         
         body {
             font-family: Arial, sans-serif;
             background-color: var(--background-color);
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            height: 100vh;
             margin: 0;
         }
         .container {
@@ -30,6 +29,7 @@
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
             text-align: center;
+            margin-top: 0;
         }
         .header {
             background-color: var(--primary-color);
@@ -44,23 +44,6 @@
             font-size: 22px;
             color: var(--text-color);
         }
-        p {
-            color: var(--text-color);
-            font-size: 16px;
-        }
-        a {
-            color: var(--link-color);
-            text-decoration: none;
-            font-weight: bold;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .footer {
-            font-size: 12px;
-            color: gray;
-            padding: 10px;
-        }
         .button {
             display: inline-block;
             margin-top: 15px;
@@ -74,6 +57,20 @@
         }
         .button:hover {
             background-color: var(--button-hover-color);
+        }
+        .footer {
+            font-size: 12px;
+            color: gray;
+            padding: 10px;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .image-container {
+            margin-top: 15px;
+        }
+        .image-container img {
+            width: var(--image-width);
+            border-radius: 5px;
         }
     </style>
     <script>
@@ -90,16 +87,16 @@
     <div class="container">
         <div class="header"></div>
         <div class="content">
-            <h1>Formulário 03 teste redirecionamento</h1>
-            <h1>Sua resposta foi registrada.</h1>
+            <h1>Sucesso !!</h1>
+            <div class="image-container">
+                <img src="https://i.imgur.com/SF6ySJE.jpeg" alt="Imagem de confirmação">
+            </div>
             <button class="button" onclick="playSoundAndRedirect()">Enviar outra resposta</button>
-            <br>
         </div>
-        <br>
     </div>
-            <div class="footer">
-            Este formulário foi criado em SECRETARIA DE EDUCAÇÃO DE MAUÁ.<br>
-            Google Formulários
-        </div>
+    <div class="footer">
+        Este formulário foi criado em SECRETARIA DE EDUCAÇÃO DE MAUÁ.<br>
+        Google Formulários
+    </div>
 </body>
 </html>
