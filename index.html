@@ -3,42 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário Enviado</title>
+    <title>Redirecionando...</title>
+    <script>
+        setTimeout(function() {
+            window.location.href = "som.html";
+        }, 1000); // Aguarda 1 segundo antes de redirecionar
+    </script>
 </head>
 <body>
-    <h2>Obrigado por enviar o formulário!</h2>
-    <p>Se o som não tocar automaticamente, clique no botão abaixo.</p>
-    
-    <audio id="audio" autoplay>
-        <source src="https://www.myinstants.com/media/sounds/confirma-urna.mp3" type="audio/mpeg">
-        Seu navegador não suporta áudio HTML5.
-    </audio>
-
-    <button onclick="document.getElementById('audio').play()">Tocar Som</button>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            let audio = document.getElementById('audio');
-
-            // Criar uma interação simulada para enganar o navegador
-            let playPromise = audio.play();
-            
-            if (playPromise !== undefined) {
-                playPromise.then(() => {
-                    console.log("Áudio tocando automaticamente!");
-                }).catch(error => {
-                    console.log("Reprodução automática bloqueada, tentando workaround...");
-                    
-                    // Workaround: Criar um evento artificial de interação do usuário
-                    let clickEvent = new MouseEvent("click", {
-                        bubbles: true,
-                        cancelable: true,
-                        view: window
-                    });
-                    document.body.dispatchEvent(clickEvent);
-                });
-            }
-        });
-    </script>
+    <h2>Carregando...</h2>
 </body>
 </html>
