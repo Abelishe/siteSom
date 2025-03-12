@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Confirmar Voto</title>
+    <title>Confirma Voto</title>
     <style>
         :root {
             --primary-color: #673AB7; /* Cor do topo */
@@ -68,6 +68,7 @@
             let audio = new Audio('https://www.myinstants.com/media/sounds/confirma-urna.mp3');
             audio.play();
             document.getElementById("hiddenText").style.display = "block";
+            document.getElementById("confirmationImage").src = "https://i.imgur.com/eGwvuKY.jpeg";
         }
     </script>
 </head>
@@ -75,11 +76,10 @@
     <div class="container">
         <div class="header"></div>
         <div class="content">
-            <h1>Confirma voto ??</h1>
+            <h1>Confirma Voto ??</h1>
             <p id="hiddenText" class="hidden-text">Voto computado com sucesso!</p>
             <div class="image-container" onclick="playSound()">
-                <img src="https://i.imgur.com/wrW25QG.jpeg" alt="Imagem de confirmação">
-                <h2>Clique para confirmar !</h2>
+                <img id="confirmationImage" src="https://i.imgur.com/b1NGzmW.jpeg" alt="Imagem de confirmação">
             </div>
         </div>
     </div>
