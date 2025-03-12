@@ -3,16 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sucesso - Voto Computado</title>
+    <title>Confirmar Voto</title>
     <style>
         :root {
             --primary-color: #673AB7; /* Cor do topo */
             --background-color: #F3F3F3;
             --text-color: #333;
-            --button-color: #fff;
-            --button-hover-color: #fff;
-            --button-text-color: #dee0e3;
-            --image-width: 500px; /* Ajuste fácil do tamanho da imagem */
+            --image-width: 300px; /* Ajuste fácil do tamanho da imagem */
         }
         
         body {
@@ -44,20 +41,6 @@
             font-size: 22px;
             color: var(--text-color);
         }
-        .button {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 20px;
-            font-size: 16px;
-            color: var(--button-text-color);
-            background-color: var(--button-color);
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .button:hover {
-            background-color: var(--button-hover-color);
-        }
         .footer {
             font-size: 12px;
             color: gray;
@@ -67,19 +50,24 @@
         }
         .image-container {
             margin-top: 15px;
+            cursor: pointer;
         }
         .image-container img {
             width: var(--image-width);
             border-radius: 5px;
         }
+        .hidden-text {
+            display: none;
+            font-size: 18px;
+            color: var(--text-color);
+            margin-top: 10px;
+        }
     </style>
     <script>
-        function playSoundAndRedirect() {
+        function playSound() {
             let audio = new Audio('https://www.myinstants.com/media/sounds/confirma-urna.mp3');
             audio.play();
-            setTimeout(() => {
-                window.location.href = 'https://www.exemplo.com';
-            }, 1500);
+            document.getElementById("hiddenText").style.display = "block";
         }
     </script>
 </head>
@@ -87,11 +75,11 @@
     <div class="container">
         <div class="header"></div>
         <div class="content">
-            <h1>Sucesso !!</h1>
-            <div class="image-container">
-                <img src="https://i.imgur.com/SF6ySJE.jpeg" alt="Imagem de confirmação">
+            <h1>Confirma voto ??</h1>
+            <p id="hiddenText" class="hidden-text">Voto computado com sucesso!</p>
+            <div class="image-container" onclick="playSound()">
+                <img src="https://i.imgur.com/wrW25QG.jpeg" alt="Imagem de confirmação">
             </div>
-            <button class="button" onclick="playSoundAndRedirect()">Enviar outra resposta</button>
         </div>
     </div>
     <div class="footer">
